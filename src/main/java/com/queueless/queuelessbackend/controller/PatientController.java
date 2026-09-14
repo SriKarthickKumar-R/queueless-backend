@@ -117,7 +117,7 @@ public class PatientController {
         }
 
         /*
-         * Update only profile information.
+         * Update profile information.
          */
 
         patient.setName(
@@ -131,6 +131,19 @@ public class PatientController {
         patient.setPhone(
                 updatedPatient.getPhone()
         );
+
+        /*
+         * Update role only when a role
+         * is actually provided.
+         */
+
+        if (updatedPatient.getRole() != null
+                && !updatedPatient.getRole().isBlank()) {
+
+            patient.setRole(
+                    updatedPatient.getRole()
+            );
+        }
 
         /*
          * We deliberately DON'T update

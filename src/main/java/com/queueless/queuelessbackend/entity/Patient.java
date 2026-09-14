@@ -21,7 +21,9 @@ public class Patient {
     private String phone;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-private String password;
+    private String password;
+
+    private String role = "PATIENT";
 
 
     // Getters and Setters
@@ -68,5 +70,14 @@ private String password;
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
